@@ -56,9 +56,10 @@ erDiagram
     categories ||--o{ products : categorize
     products ||--|| product_bests: recommend
     product_bests ||--|| brands: sell
-    product_bests ||--o{ product_events: progress
+    product_bests o{--|| product_events: progress
     products ||--|{ product_brands: sell
-    product_brands ||--o{ product_events: progress
+    product_brands o{--|| product_events: progress
+    product_brands |{--|| brands: sell
 
     brands ||--o{ events: progress
     events ||--|{ event_images: pamphlet
